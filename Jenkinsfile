@@ -14,11 +14,11 @@ pipeline {
         stage('Deploy Frontend to Tomcat') {
             steps {
                 bat '''
-                    if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\homeservices-frontend" (
-                        rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\homeservices-frontend"
+                    if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\homeservices-frontend" (
+                        rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\homeservices-frontend"
                     )
-                    mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\kabaddi"
-                    xcopy /E /I /Y HomeServices\\dist\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\homeservices-frontend"
+                    mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\kabaddi"
+                    xcopy /E /I /Y HomeServices\\dist\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\homeservices-frontend"
                 '''
             }
         }
@@ -34,10 +34,10 @@ pipeline {
         stage('Deploy Backend to Tomcat') {
             steps {
                 bat '''
-                    if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\homeservices-backend.war" (
-                        del "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\homeservices-backend.war"
+                    if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\homeservices-backend.war" (
+                        del "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\homeservices-backend.war"
                     )
-                    copy HomeServices-Backend1\\target\\homeservices-backend.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\"
+                    copy HomeServices-Backend1\\target\\homeservices-backend.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Tomcat9_216\\webapps\\"
                 '''
             }
         }
