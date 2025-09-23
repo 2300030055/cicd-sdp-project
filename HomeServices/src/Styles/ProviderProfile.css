@@ -1,0 +1,43 @@
+.provider-profile-page {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 45px rgba(95, 10, 135, 0.12);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.provider-profile-page h1 {
+  color: #5f0a87;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+.provider-profile-page p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.provider-profile-page h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #a4508b;
+}
+
+.provider-profile-page ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.provider-profile-page ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.provider-profile-page .btn {
+  margin-top: 2rem;
+  font-weight: 700;
+  padding: 0.7rem 1.6rem;
+}

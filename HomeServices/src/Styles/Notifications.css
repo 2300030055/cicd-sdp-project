@@ -1,0 +1,27 @@
+.notifications-page {
+  background: white;
+  border-radius: 14px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  box-shadow: 0 10px 28px rgba(95, 10, 135, 0.12);
+}
+
+.notifications-page h1 {
+  color: #5f0a87;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.notifications-page ul {
+  list-style: disc inside;
+  padding-left: 0;
+  font-weight: 600;
+  color: #444;
+}
+
+.notifications-page ul li {
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+}

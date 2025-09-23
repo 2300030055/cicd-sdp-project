@@ -1,0 +1,32 @@
+.user-dashboard-page {
+  background: rgb(234, 232, 232);
+  border-radius: 14px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  box-shadow: 0 10px 28px rgba(88, 17, 120, 0.15);
+}
+
+.user-dashboard-page h1 {
+  color: #120219;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-dashboard-page ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.user-dashboard-page li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.user-dashboard-page li .btn {
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  margin-left: 1rem;
+}

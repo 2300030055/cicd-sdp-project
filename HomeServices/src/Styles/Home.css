@@ -1,0 +1,18 @@
+.home-page {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(95, 10, 135, 0.12);
+}
+
+.home-page h1 {
+  color: #98939b;
+  margin-bottom: 0.8rem;
+}
+
+.home-page p {
+  font-size: 1.15rem;
+  color: #050202;
+  margin-bottom: 1.6rem;
+}

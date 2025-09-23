@@ -1,0 +1,184 @@
+/* Ensure full viewport for all root containers */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Set a global background image for all pages */
+  background: url('./assets/images/mainbackgrnd.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Stack header and .app-main vertically, allow growth */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  width: 100%;
+  background: #8412bc;
+  padding: 1rem 2rem;
+  color: #a49a9a;
+  display: flex;
+  justify-content: flex-start; /* Left align nav */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 20px rgba(90,53,156,.2);
+  flex-shrink: 0;
+}
+
+/* Navigation styles */
+
+.app-header nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.app-header nav a,
+.app-header nav button {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Move logout button even further right (25cm) */
+.app-header nav .logout-btn {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+.app-header nav a:hover,
+.app-header nav button:hover {
+  background: #a4508b;
+  color: #fff;
+}
+
+/* Main content fills available space and centers child cards */
+.app-main {
+  flex: 1 0 auto;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center card vertically */
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent; /* Keep the light background */
+}
+
+/* Make home-page and other sections fill the viewport */
+.home-page, .services-list-page,
+.providers-by-service-page, .provider-profile-page,
+.booking-page, .user-dashboard-page, .provider-dashboard-page,
+.payment-page, .notifications-page, .login-container, .signup-container, .notfound-page {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: style the content inside the full-page container */
+.home-page h1,
+.services-list-page h1,
+.providers-by-service-page h1,
+.provider-profile-page h1,
+.booking-page h1,
+.user-dashboard-page h1,
+.provider-dashboard-page h1,
+.payment-page h1,
+.notifications-page h1,
+.login-container h1,
+.signup-container h1,
+.notfound-page h1 {
+  color: #5f0a87;
+  margin-bottom: 0.8rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.home-page p {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 1.6rem;
+}
+
+/* Button styles */
+.btn {
+  cursor: pointer;
+  background: linear-gradient(135deg, #a4508b, #5f0a87);
+  color: white;
+  border-radius: 6px;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.8rem;
+  box-shadow: 0 4px 12px rgba(164,80,139,0.39);
+  user-select: none;
+}
+.btn.primary:hover {
+  background: linear-gradient(135deg, #5f0a87, #a4508b);
+  box-shadow: 0 6px 20px rgba(95,10,135,0.5);
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #5f0a87;
+  border: 2px solid #5f0a87;
+  margin-left: 1rem;
+  box-shadow: 0 4px 12px rgba(95,10,135,0.15);
+}
+.btn.secondary:hover {
+  background: #5f0a87;
+  color: white;
+  box-shadow: 0 6px 20px rgba(164,80,139,0.8);
+}
+
+.btn.logout-btn {
+  background: #c0392b;
+  box-shadow: 0 3px 10px rgba(192,57,43,0.6);
+}
+.btn.logout-btn:hover {
+  background: #e74c3c;
+  box-shadow: 0 5px 20px rgba(231,76,60,0.8);
+}
+
+/* Responsive: make content scrollable on small screens */
+@media (max-width: 800px) {
+  .home-page, .services-list-page, .providers-by-service-page,
+  .provider-profile-page, .booking-page, .user-dashboard-page,
+  .provider-dashboard-page, .payment-page, .notifications-page,
+  .login-container, .signup-container, .notfound-page {
+    width: 100vw;
+    height: 100vh;
+    padding: 0.8rem 0.2rem;
+    overflow-y: auto;
+  }
+}
