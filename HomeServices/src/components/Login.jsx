@@ -19,7 +19,7 @@ function Login({ setLoggedIn }) {
     setError("");
     setSuccess("");
     try {
-      const response = await fetch("http://localhost:6060/api/users/login", {
+  const response = await fetch("http://localhost:9090/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -44,7 +44,7 @@ function Login({ setLoggedIn }) {
     e.preventDefault();
     setResetMsg("");
     try {
-      const response = await fetch("http://localhost:6060/api/users/reset-password", {
+  const response = await fetch("http://localhost:9090/api/users/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: resetEmail })
