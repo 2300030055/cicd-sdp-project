@@ -1,3 +1,4 @@
+version: "3.8"
 services:
   db:
     image: mysql:8.0
@@ -12,13 +13,10 @@ services:
       interval: 5s
       timeout: 3s
       retries: 20
-    # If you need host access for Workbench/DBeaver, uncomment:
-    # ports:
-    #   - "3307:3306"          # host:container
 
   backend:
-    build: ./docker-ecommerce-backend
-    container_name: ecommerce-backend
+    build: ./HomeServices-Backend1
+    container_name: homeservices-backend
     depends_on:
       db:
         condition: service_healthy
@@ -27,25 +25,18 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/homeservices?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      # Optional JPA hints:
-      # SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      # SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL8Dialect
     ports:
-      - "8081:8081"           # backend reachable at http://localhost:8081
+      - "8082:8081"   # backend at http://localhost:8082
     restart: unless-stopped
 
   frontend:
-    build: ./docker-HomeServices
-    container_name: ecommerce-frontend
+    build: ./HomeServices
+    container_name: homeservices-frontend
     depends_on:
       - backend
     ports:
-      - "3000:80"             # frontend at http://localhost:3000
+      - "3001:80"     # frontend at http://localhost:3001
     restart: unless-stopped
-    # If your nginx.conf proxies /api to the backend, it will reach service name "backend" on port 8081
 
 volumes:
   mysql_data: {}
-
-#shall we do this without backend and databse
-
